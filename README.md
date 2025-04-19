@@ -1,4 +1,4 @@
-Trip Genie :Your AI Travel Planner
+**Trip Genie :Your AI Travel Planner**
 Plan. Explore. Experience.
 
 Tired of spending hours planning your trip? Let Trip Genie do it for you! Our AI-powered travel assistant curates the perfect itinerary based on your preferences, ensuring a seamless travel experience.
