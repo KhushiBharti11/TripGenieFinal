@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip Genie</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="itinerary-styles.css">
+    <link rel="stylesheet" href="booking.css">
+    <link rel="stylesheet" href="destinations.css">
+    <link rel="stylesheet" href="destinations-enhanced.css">
+    <link rel="stylesheet" href="enhanced-theme.css">
+    <link rel="stylesheet" href="booking-enhanced.css">
+</head>
+<body>
+    <div id="welcome-screen">Trip Genie Welcomes You</div>
+
+    <div id="loading-screen" style="display: none;">
+        <h2>Loading...</h2>
+        <p>Please wait while we fetch your data.</p>
+    </div>
+    <div id="error-screen" style="display: none;">
+        <h2>Error</h2>
+        <p>Something went wrong. Please try again later.</p>
+    </div>
+
+    <div id="main-content" style="display: none;">
+        <header>
+            <h1>Trip Genie</h1>
+        </header>
+
+        <!-- Navigation Bar -->
+        <nav>
+            <ul>
+                <li><a href="#" onclick="switchTab('home'); return false;" class="active">Home</a></li>
+                <li><a href="#" onclick="switchTab('trip-planning'); return false;">Trip Planning</a></li>
+                <li><a href="#" onclick="switchTab('booking'); return false;">Booking</a></li>
+                <li><a href="#" onclick="switchTab('profile'); return false;">Profile</a></li>
+                <li><a href="#" onclick="switchTab('destinations'); return false;">Destinations</a></li>
+            </ul>
+        </nav>
+
+        <!-- Tabs Container -->
+        <div class="tabs-container">
+        <section id="home" class="tab-content" style="display: block;">
+            <h2 class="fade-in-up">Welcome to Trip Genie</h2>
+            <p class="fade-in-up delay-1">Explore the world with Trip Genie. Discover new places, plan your trips, and book your adventures.</p>
+            <div class="hero-buttons fade-in-up delay-2">
+                <button onclick="switchTab('trip-planning'); return false;" class="primary-button">Plan Your Trip</button>
+                <button onclick="switchTab('destinations'); return false;" class="primary-button">Explore Destinations</button>
+            </div>
+        </section>
+
+        <section id="destinations" class="tab-content" style="display: none;">
+            <h2>Explore Destinations</h2>
+            <div class="search-container">
+                <input type="text" placeholder="Search for Indian cities (e.g., Kolkata, Mumbai, Delhi)" id="search-bar">
+                <button id="search-btn">Search</button>
+            </div>
+            <div class="destinations-info">
+                <p>Discover amazing destinations across India. Search for a city to see famous attractions, or browse our popular destinations below.</p>
+            </div>
+            <div id="search-results" class="search-results-container"></div>
+            <div id="destinations-list"></div>
+        </section>
+
+        <section id="trip-planning" class="tab-content" style="display: none;">
+            <h2>AI-Generated Itinerary with Gemini</h2>
+            <div class="itinerary-form">
+                <div class="form-group">
+                    <label for="destination">Destination City:</label>
+                    <input type="text" id="destination" placeholder="Enter Indian city name (e.g., Delhi, Mumbai, Jaipur)">
+                    <small class="form-hint">Please enter a specific city name, not a country or region.</small>
+                </div>
+                <div class="form-group">
+                    <label for="days">Number of Days:</label>
+                    <select id="days">
+                        <option value="1">1 Day</option>
+                        <option value="2">2 Days</option>
+                        <option value="3" selected>3 Days</option>
+                        <option value="4">4 Days</option>
+                        <option value="5">5 Days</option>
+                        <option value="7">7 Days</option>
+                        <option value="10">10 Days</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="persons">Number of Persons:</label>
+                    <select id="persons">
+                        <option value="1">1 Person</option>
+                        <option value="2" selected>2 Persons</option>
+                        <option value="3">3 Persons</option>
+                        <option value="4">4 Persons</option>
+                        <option value="5">5 Persons</option>
+                        <option value="6">6 Persons</option>
+                        <option value="7">7+ Persons</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="hotel-category">Hotel Category:</label>
+                    <select id="hotel-category">
+                        <option value="budget">Budget (₹1000-3000/night)</option>
+                        <option value="moderate" selected>Moderate (₹3000-7000/night)</option>
+                        <option value="luxury">Luxury (₹7000+/night)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Travel Preferences:</label>
+                    <div class="preferences-container">
+                        <label><input type="checkbox" name="travel-preferences" value="Adventure"> Adventure</label>
+                        <label><input type="checkbox" name="travel-preferences" value="Cultural"> Cultural</label>
+                        <label><input type="checkbox" name="travel-preferences" value="Historical"> Historical</label>
+                        <label><input type="checkbox" name="travel-preferences" value="Religious"> Religious/Spiritual</label>
+
+                        <label><input type="checkbox" name="travel-preferences" value="Vegetarian"> Vegetarian Food</label>
+                        <label><input type="checkbox" name="travel-preferences" value="Non-Vegetarian"> Non-Vegetarian Food</label>
+                        <label><input type="checkbox" name="travel-preferences" value="Budget"> Budget-friendly</label>
+                        <label><input type="checkbox" name="travel-preferences" value="Luxury"> Luxury</label>
+                        <label><input type="checkbox" name="travel-preferences" value="Family"> Family-friendly</label>
+                        <label><input type="checkbox" name="travel-preferences" value="Nature"> Nature & Outdoors</label>
+                        <label><input type="checkbox" name="travel-preferences" value="Beach"> Beach</label>
+                        <label><input type="checkbox" name="travel-preferences" value="Shopping"> Shopping</label>
+                        <label><input type="checkbox" name="travel-preferences" value="Photography"> Photography</label>
+                        <label><input type="checkbox" name="travel-preferences" value="Art"> Art & Museums</label>
+                        <label><input type="checkbox" name="travel-preferences" value="Nightlife"> Nightlife</label>
+                        <label><input type="checkbox" name="travel-preferences" value="Relaxed"> Relaxed Pace</label>
+                    </div>
+                </div>
+                <button id="generate-itinerary" class="primary-button">Generate Itinerary with Gemini AI</button>
+            </div>
+            <div class="loading-container" id="itinerary-loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Generating your personalized travel itinerary with Gemini AI...</p>
+            </div>
+            <div id="itinerary-result">
+                <!-- Generated itinerary will appear here -->
+            </div>
+        </section>
+
+        <section id="booking" class="tab-content" style="display: none;">
+            <h2>Book Your Trip</h2>
+
+            <!-- Booking options description -->
+            <p>Choose from our booking options below to find the best deals on hotels, flights, trains, and buses.</p>
+
+            <!-- Booking Tabs -->
+            <div class="booking-tabs-container fade-in-up">
+                <button class="booking-tab" onclick="toggleBookingTab('hotels-section')">Hotels</button>
+                <button class="booking-tab" onclick="toggleBookingTab('flights-section')">Flights</button>
+                <button class="booking-tab" onclick="toggleBookingTab('trains-section')">Trains</button>
+                <button class="booking-tab" onclick="toggleBookingTab('buses-section')">Buses</button>
+                <button class="booking-tab" onclick="toggleBookingTab('cabs-section')">Cabs</button>
+            </div>
+
+            <!-- Hotels Section -->
+            <div id="hotels-section" class="booking-tab-content" style="display: none;">
+                <h3>Hotels</h3>
+                <div class="hotel-search-container">
+                    <p>Click the button below to find and book hotels on Trivago:</p>
+                    <button onclick="searchHotels()">Search Hotels on Trivago</button>
+                </div>
+                <div id="hotel-results">
+                    <div class="loading-spinner" id="hotel-loading" style="display: none;">
+                        <div class="spinner"></div>
+                        <p>Redirecting to Trivago...</p>
+                    </div>
+                    <div id="hotels-container" class="hotels-grid"></div>
+                </div>
+            </div>
+
+            <!-- Flights Section -->
+            <div id="flights-section" class="booking-tab-content" style="display: none;">
+                <h3>Flights</h3>
+                <div class="flight-search-container">
+                    <p>Click the button below to find and book flights on MakeMyTrip:</p>
+                    <button onclick="searchFlights()">Search Flights on MakeMyTrip</button>
+                </div>
+                <div id="flight-results">
+                    <div class="loading-spinner" id="flight-loading" style="display: none;">
+                        <div class="spinner"></div>
+                        <p>Redirecting to MakeMyTrip...</p>
+                    </div>
+                    <div id="flights-container" class="flights-grid"></div>
+                </div>
+            </div>
+
+            <!-- Trains Section -->
+            <div id="trains-section" class="booking-tab-content" style="display: none;">
+                <h3>Trains</h3>
+                <div class="train-search-container">
+                    <p>Click the button below to find and book trains on IRCTC:</p>
+                    <button onclick="searchTrains()">Search Trains on IRCTC</button>
+                </div>
+                <div id="train-results">
+                    <div class="loading-spinner" id="train-loading" style="display: none;">
+                        <div class="spinner"></div>
+                        <p>Redirecting to IRCTC...</p>
+                    </div>
+                    <div id="trains-container" class="trains-grid"></div>
+                </div>
+            </div>
+
+            <!-- Buses Section -->
+            <div id="buses-section" class="booking-tab-content" style="display: none;">
+                <h3>Buses</h3>
+                <div class="bus-search-container">
+                    <p>Click the button below to find and book buses on RedBus:</p>
+                    <button onclick="searchBuses()">Search Buses on RedBus</button>
+                </div>
+                <div id="bus-results">
+                    <div class="loading-spinner" id="bus-loading" style="display: none;">
+                        <div class="spinner"></div>
+                        <p>Redirecting to RedBus...</p>
+                    </div>
+                    <div id="buses-container" class="buses-grid"></div>
+                </div>
+            </div>
+
+            <!-- Cabs Section -->
+            <div id="cabs-section" class="booking-tab-content" style="display: none;">
+                <h3>Cabs</h3>
+                <div class="cab-search-container">
+                    <p>Click the button below to book a cab on Uber:</p>
+                    <button onclick="searchCabs()">Book Cabs on Uber</button>
+                </div>
+                <div id="cab-results">
+                    <div class="loading-spinner" id="cab-loading" style="display: none;">
+                        <div class="spinner"></div>
+                        <p>Redirecting to Uber...</p>
+                    </div>
+                    <div id="cabs-container" class="cabs-grid"></div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="profile" class="tab-content" style="display: none;">
+            <h2>Your Profile</h2>
+
+            <div id="login-section" class="profile-section">
+                <h3>Login or Register</h3>
+                <div class="form-container">
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" placeholder="Enter your username">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" placeholder="Enter your password">
+                    </div>
+                    <div class="button-group">
+                        <button id="login-btn" class="primary-button" onclick="console.log('Login button clicked via inline handler')">Login</button>
+                        <button id="register-btn" class="secondary-button" onclick="console.log('Register button clicked via inline handler')">Register</button>
+                    </div>
+                    <p style="text-align: center; margin-top: 20px;">
+                        Having trouble? <a href="login.html" target="_blank">Try our standalone login page</a>
+                    </p>
+                </div>
+            </div>
+
+            <div id="user-profile" class="profile-section" style="display: none;">
+                <div class="profile-header">
+                    <h3>Welcome, <span id="profile-username">User</span>!</h3>
+                    <button id="logout-btn" class="text-button">Logout</button>
+                </div>
+
+                <div class="profile-tabs">
+                    <button class="profile-tab-btn active" data-tab="past-trips">Past Trips</button>
+                    <button class="profile-tab-btn" data-tab="saved-itineraries">Saved Itineraries</button>
+                    <button class="profile-tab-btn" data-tab="user-feedback">Your Feedback</button>
+                </div>
+
+                <div id="past-trips" class="profile-tab-content">
+                    <h4>Your Past Trips</h4>
+                    <div id="past-trips-list" class="trip-list">
+                        <!-- Past trips will be loaded here -->
+                        <p class="empty-state">No past trips found. Start planning your first adventure!</p>
+                    </div>
+                </div>
+
+                <div id="saved-itineraries" class="profile-tab-content" style="display: none;">
+                    <h4>Your Saved Itineraries</h4>
+
+                    <div class="itinerary-controls">
+                        <div class="search-filter">
+                            <input type="text" id="itinerary-search" placeholder="Search by destination..." class="search-input">
+                            <select id="itinerary-sort" class="sort-select">
+                                <option value="date-desc">Newest First</option>
+                                <option value="date-asc">Oldest First</option>
+                                <option value="name-asc">Destination (A-Z)</option>
+                                <option value="name-desc">Destination (Z-A)</option>
+                                <option value="days-asc">Duration (Shortest First)</option>
+                                <option value="days-desc">Duration (Longest First)</option>
+                            </select>
+                        </div>
+                        <div class="itinerary-stats">
+                            <span id="itinerary-count">0</span> itineraries saved
+                        </div>
+                    </div>
+
+                    <div id="saved-itineraries-list" class="itinerary-list">
+                        <!-- Saved itineraries will be loaded here -->
+                        <p class="empty-state">No saved itineraries found. Generate and save an itinerary to see it here!</p>
+                    </div>
+                </div>
+
+                <div id="user-feedback" class="profile-tab-content" style="display: none;">
+                    <h4>Your Feedback</h4>
+                    <div id="feedback-list" class="feedback-list">
+                        <!-- User feedback will be loaded here -->
+                        <p class="empty-state">No feedback submitted yet.</p>
+                    </div>
+
+                    <div class="feedback-form">
+                        <h4>Submit New Feedback</h4>
+                        <div class="form-group">
+                            <label for="feedback-destination">Destination:</label>
+                            <input type="text" id="feedback-destination" placeholder="Enter destination name">
+                        </div>
+                        <div class="form-group">
+                            <label for="feedback-rating">Rating:</label>
+                            <select id="feedback-rating">
+                                <option value="5">5 - Excellent</option>
+                                <option value="4">4 - Very Good</option>
+                                <option value="3">3 - Good</option>
+                                <option value="2">2 - Fair</option>
+                                <option value="1">1 - Poor</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="feedback-comment">Comments:</label>
+                            <textarea id="feedback-comment" placeholder="Share your experience..."></textarea>
+                        </div>
+                        <button id="submit-feedback" class="primary-button">Submit Feedback</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- End of tabs-container -->
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Trip Genie. All Rights Reserved.</p>
+    </footer>
+
+    <script src="user-auth.js"></script>
+    <script src="main.js"></script>
+    <script src="booking_script.js"></script>
+    <script src="profile.js"></script>
+    <script src="destinations_embedded.js"></script>
+</body>
+</html>

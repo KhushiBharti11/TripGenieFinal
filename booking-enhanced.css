@@ -1,0 +1,413 @@
+/* Enhanced Booking Section Styling */
+:root {
+    --primary-color: #ffcc00;
+    --primary-dark: #ff9900;
+    --primary-light: #ffeb99;
+    --secondary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --text-dark: #2c3e50;
+    --text-light: #ecf0f1;
+    --background-light: rgba(255, 255, 255, 0.95);
+    --background-dark: rgba(44, 62, 80, 0.9);
+    --shadow-light: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 15px 35px rgba(0, 0, 0, 0.2);
+    --shadow-dark: 0 20px 40px rgba(0, 0, 0, 0.3);
+    --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    --gradient-secondary: linear-gradient(135deg, #3498db, #2980b9);
+    --gradient-accent: linear-gradient(135deg, #e74c3c, #c0392b);
+    --border-radius-sm: 8px;
+    --border-radius-md: 15px;
+    --border-radius-lg: 30px;
+    --transition-fast: 0.2s ease;
+    --transition-medium: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* Booking Section Enhancements */
+#booking {
+    text-align: center;
+}
+
+#booking h2 {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+#booking h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--gradient-primary);
+    border-radius: 4px;
+}
+
+#booking > p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    color: #555;
+}
+
+/* Booking Tabs Navigation */
+.booking-tabs-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.booking-tab {
+    background: #fff;
+    color: var(--secondary-color);
+    border: none;
+    padding: 15px 30px;
+    border-radius: var(--border-radius-lg);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 150px;
+}
+
+.booking-tab::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+.booking-tab:hover::before {
+    transform: translateY(0);
+}
+
+.booking-tab:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.booking-tab.active {
+    background: var(--gradient-primary);
+    color: white;
+    box-shadow: 0 8px 25px rgba(255, 204, 0, 0.3);
+}
+
+.booking-tab::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+    transition: width 0.3s ease;
+    border-radius: 3px;
+}
+
+.booking-tab:hover::after {
+    width: 80%;
+}
+
+.booking-tab.active::after {
+    display: none;
+}
+
+/* Booking Tab Icons */
+.booking-tab[onclick*="hotels-section"]::before {
+    content: '🏨';
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.booking-tab[onclick*="flights-section"]::before {
+    content: '✈️';
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.booking-tab[onclick*="trains-section"]::before {
+    content: '🚆';
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.booking-tab[onclick*="buses-section"]::before {
+    content: '🚌';
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.booking-tab[onclick*="cabs-section"]::before {
+    content: '🚕';
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+/* Booking Tab Content */
+.booking-tab-content {
+    background: #fff;
+    border-radius: var(--border-radius-md);
+    padding: 40px;
+    margin: 20px auto;
+    max-width: 900px;
+    box-shadow: var(--shadow-light);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.booking-tab-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--gradient-primary);
+}
+
+.booking-tab-content h3 {
+    font-size: 2em;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: var(--secondary-color);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.booking-tab-content h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--gradient-primary);
+    border-radius: 3px;
+}
+
+.booking-tab-content p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 25px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Booking Search Containers */
+.hotel-search-container,
+.flight-search-container,
+.train-search-container,
+.bus-search-container,
+.cab-search-container {
+    background: #f9f9f9;
+    border-radius: var(--border-radius-md);
+    padding: 30px;
+    margin-bottom: 30px;
+    border: 1px solid #eee;
+    position: relative;
+}
+
+/* Booking Buttons */
+.booking-tab-content button {
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    border-radius: var(--border-radius-lg);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 5px 15px rgba(255, 204, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.booking-tab-content button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+}
+
+.booking-tab-content button:hover::before {
+    transform: translateX(0);
+}
+
+.booking-tab-content button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 204, 0, 0.4);
+}
+
+.booking-tab-content button:active {
+    transform: translateY(1px);
+    box-shadow: 0 3px 10px rgba(255, 204, 0, 0.3);
+}
+
+/* Hotel Button */
+.hotel-search-container button::before {
+    content: '🔍';
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+/* Flight Button */
+.flight-search-container button::before {
+    content: '🔍';
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+/* Train Button */
+.train-search-container button::before {
+    content: '🔍';
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+/* Bus Button */
+.bus-search-container button::before {
+    content: '🔍';
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+/* Cab Button */
+.cab-search-container button::before {
+    content: '🔍';
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-light);
+    margin: 30px auto;
+    max-width: 500px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 5px solid rgba(255, 204, 0, 0.2);
+    border-radius: 50%;
+    border-top-color: var(--primary-color);
+    animation: spin 1s ease-in-out infinite;
+    margin: 0 auto 25px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loading-spinner p {
+    color: var(--secondary-color);
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Results Containers */
+.hotels-grid,
+.flights-grid,
+.trains-grid,
+.buses-grid,
+.cabs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .booking-tab-content {
+        padding: 25px;
+        margin: 15px;
+    }
+    
+    .booking-tab {
+        padding: 12px 20px;
+        font-size: 14px;
+        min-width: 120px;
+    }
+    
+    .hotel-search-container,
+    .flight-search-container,
+    .train-search-container,
+    .bus-search-container,
+    .cab-search-container {
+        padding: 20px;
+    }
+    
+    .booking-tab-content button {
+        width: 100%;
+        padding: 14px 20px;
+    }
+    
+    .hotels-grid,
+    .flights-grid,
+    .trains-grid,
+    .buses-grid,
+    .cabs-grid {
+        grid-template-columns: 1fr;
+    }
+}

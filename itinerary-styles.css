@@ -1,0 +1,221 @@
+/* Itinerary Result Styling */
+#itinerary-result {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    padding: 30px;
+    margin-top: 30px;
+    text-align: left;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+#itinerary-result h3 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #ffcc00;
+    text-align: center;
+}
+
+.itinerary-content {
+    line-height: 1.8;
+    font-size: 16px;
+    color: #444;
+}
+
+.itinerary-content h1, 
+.itinerary-content h2, 
+.itinerary-content h3, 
+.itinerary-content h4 {
+    color: #333;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.itinerary-content h2 {
+    font-size: 22px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.itinerary-content h3 {
+    font-size: 20px;
+    color: #ff9900;
+    border-bottom: none;
+    text-align: left;
+}
+
+.itinerary-content p {
+    margin-bottom: 15px;
+}
+
+.itinerary-content ul, 
+.itinerary-content ol {
+    margin-bottom: 20px;
+    padding-left: 25px;
+}
+
+.itinerary-content li {
+    margin-bottom: 10px;
+}
+
+.itinerary-content a {
+    color: #0066cc;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.itinerary-content a:hover {
+    color: #ff9900;
+    text-decoration: underline;
+}
+
+.itinerary-content strong, 
+.itinerary-content b {
+    font-weight: 600;
+    color: #333;
+}
+
+.itinerary-content em, 
+.itinerary-content i {
+    font-style: italic;
+    color: #555;
+}
+
+.itinerary-content blockquote {
+    border-left: 4px solid #ffcc00;
+    padding: 10px 20px;
+    margin: 20px 0;
+    background-color: #f9f9f9;
+    font-style: italic;
+}
+
+.itinerary-content code {
+    font-family: monospace;
+    background-color: #f5f5f5;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.itinerary-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.itinerary-content th, 
+.itinerary-content td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.itinerary-content th {
+    background-color: #f5f5f5;
+    font-weight: 600;
+}
+
+.itinerary-content tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.itinerary-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.action-button {
+    background-color: #f5f5f5;
+    color: #333;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-button:hover {
+    background-color: #e5e5e5;
+    transform: translateY(-2px);
+}
+
+.action-button:before {
+    font-family: 'Material Symbols Rounded';
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+.action-button:nth-child(1):before {
+    content: 'print';
+}
+
+.action-button:nth-child(2):before {
+    content: 'bookmark';
+}
+
+/* Loading spinner */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    margin: 30px auto;
+    max-width: 500px;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 204, 0, 0.3);
+    border-radius: 50%;
+    border-top-color: #ffcc00;
+    animation: spin 1s ease-in-out infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loading-container p {
+    color: #555;
+    font-size: 16px;
+    text-align: center;
+    margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #itinerary-result {
+        padding: 20px;
+        margin: 20px 10px;
+    }
+    
+    .itinerary-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .action-button {
+        width: 100%;
+    }
+}

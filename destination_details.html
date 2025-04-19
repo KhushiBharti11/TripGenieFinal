@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destination Details - Trip Genie</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="destinations.css">
+    <link rel="stylesheet" href="destination-details-enhanced.css">
+    <style>
+        /* Destination details specific styles */
+        .destination-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            background-color: #f8f9fa;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .destination-header-image {
+            flex: 0 0 40%;
+            max-height: 300px;
+            overflow: hidden;
+        }
+
+        .destination-header-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .destination-header-info {
+            flex: 0 0 60%;
+            padding: 20px;
+        }
+
+        .destination-section {
+            margin-bottom: 40px;
+        }
+
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .place-card {
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: white;
+        }
+
+        .place-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .place-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .place-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .place-card:hover .place-image img {
+            transform: scale(1.05);
+        }
+
+        .place-info {
+            padding: 15px;
+        }
+
+        .place-info h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .place-info p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .map-link {
+            display: inline-flex;
+            align-items: center;
+            color: #4285F4;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .map-link img {
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+        }
+
+        .booking-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .booking-buttons button {
+            padding: 12px 24px;
+            background-color: #4285F4;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .booking-buttons button:hover {
+            background-color: #3367D6;
+        }
+
+        .error {
+            text-align: center;
+            padding: 50px;
+            font-size: 18px;
+            color: #666;
+        }
+
+        .error a {
+            color: #4285F4;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .destination-header {
+                flex-direction: column;
+            }
+
+            .destination-header-image,
+            .destination-header-info {
+                flex: 0 0 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Trip Genie</h1>
+        <nav>
+            <ul>
+                <li><a href="ui.html">Home</a></li>
+                <li><a href="ui.html#destinations">Destinations</a></li>
+                <li><a href="ui.html#trip-planning">Trip Planning</a></li>
+                <li><a href="ui.html#booking">Booking</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="destination-header">
+            <div class="destination-header-image">
+                <img src="https://via.placeholder.com/800x400?text=Loading..." alt="Loading destination">
+            </div>
+            <div class="destination-header-info">
+                <h1 id="destination-title">Loading destination...</h1>
+            </div>
+        </div>
+
+        <!-- Places to Visit Section -->
+        <section id="places-section" class="destination-section">
+            <h2>Famous Places to Visit</h2>
+            <div id="places-grid" class="places-grid">
+                <!-- Places will be dynamically added here -->
+                <p>Loading places...</p>
+            </div>
+        </section>
+
+        <!-- Information Section -->
+        <section id="info-section" class="destination-section">
+            <h2>Travel Information</h2>
+
+            <div class="info-container">
+                <div class="info-card">
+                    <h3>Attractions</h3>
+                    <ul id="places-list">
+                        <!-- Attractions will be dynamically added here -->
+                        <li>Loading attractions...</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>Local Cuisine</h3>
+                    <p id="cuisine-list">Loading cuisine information...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Accommodation Section -->
+        <section id="accommodation-section" class="destination-section">
+            <h2>Accommodation Options</h2>
+            <ul id="hotels-list">
+                <!-- Hotels will be dynamically added here -->
+                <li>Loading hotel information...</li>
+            </ul>
+
+            <div class="booking-buttons">
+                <button onclick="window.open('https://www.trivago.in/en-IN/srl?search=' + encodeURIComponent(document.getElementById('destination-title').textContent), '_blank')">Find Hotels on Trivago</button>
+                <button onclick="window.open('https://www.makemytrip.com/hotels/', '_blank')">Book on MakeMyTrip</button>
+            </div>
+        </section>
+
+        <!-- Restaurants Section -->
+        <section id="restaurants-section" class="destination-section">
+            <h2>Popular Restaurants</h2>
+            <ul id="restaurants-list">
+                <!-- Restaurants will be dynamically added here -->
+                <li>Loading restaurant information...</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Trip Genie. All Rights Reserved.</p>
+    </footer>
+
+    <script src="destination_details_embedded.js"></script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+[
+  {
+    "name": "Kolkata",
+    "description": "Known as the City of Joy, Kolkata is rich in colonial architecture, culture, and festivals.",
+    "places_to_visit": [
+      {
+        "name": "Victoria Memorial",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Victoria_Memorial_Kolkata.jpg",
+        "description": "A large marble building dedicated to Queen Victoria, surrounded by gardens."
+      },
+      {
+        "name": "Howrah Bridge",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Howrah_Bridge_Kolkata_2013.jpg",
+        "description": "An engineering marvel spanning the Hooghly River."
+      }
+    ],
+    "restaurants": [
+      {
+        "name": "6 Ballygunge Place",
+        "image": "https://media-cdn.tripadvisor.com/media/photo-s/0c/2b/3c/f7/photo0jpg.jpg",
+        "description": "Renowned for authentic Bengali cuisine in a traditional setting."
+      },
+      {
+        "name": "Peter Cat",
+        "image": "https://imgstaticcontent.lbb.in/lbbnew/wp-content/uploads/sites/1/2017/07/07112010/Peter-Cat.jpg",
+        "description": "Famous for its Chelo Kebabs and colonial ambiance."
+      }
+    ]
+  },
+  {
+    "name": "Varanasi",
+    "description": "Spiritual capital of India on the banks of the Ganges, known for its ghats and temples.",
+    "places_to_visit": [
+      {
+        "name": "Kashi Vishwanath Temple",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/8/84/Kashi_Viswanath_Temple%2C_Varanasi.jpg",
+        "description": "One of the most famous Hindu temples dedicated to Lord Shiva."
+      },
+      {
+        "name": "Dashashwamedh Ghat",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/8/80/Dashashwamedh_Ghat.jpg",
+        "description": "Famous ghat where Ganga Aarti is performed every evening."
+      }
+    ],
+    "restaurants": [
+      {
+        "name": "Brown Bread Bakery",
+        "image": "https://media-cdn.tripadvisor.com/media/photo-s/12/e0/d5/e3/brown-bread-bakery.jpg",
+        "description": "Popular organic bakery and rooftop café."
+      },
+      {
+        "name": "Dosa Cafe",
+        "image": "https://media-cdn.tripadvisor.com/media/photo-s/03/e1/2d/fb/dosa-cafe.jpg",
+        "description": "Tiny eatery offering South Indian fare in the old city."
+      }
+    ]
+  },
+  {
+    "name": "Puri",
+    "description": "A coastal city in Odisha, known for the Jagannath Temple and golden beaches.",
+    "places_to_visit": [
+      {
+        "name": "Jagannath Temple",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Jagannath_Temple_Puri.jpg",
+        "description": "One of the Char Dham pilgrimage sites."
+      },
+      {
+        "name": "Puri Beach",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Puri_Beach.jpg",
+        "description": "Famous for sunrise views and camel rides."
+      }
+    ],
+    "restaurants": [
+      {
+        "name": "Chung Wah",
+        "image": "https://media-cdn.tripadvisor.com/media/photo-s/10/f3/87/b2/chung-wah.jpg",
+        "description": "Popular for Chinese cuisine in Puri."
+      },
+      {
+        "name": "Wildgrass Restaurant",
+        "image": "https://media-cdn.tripadvisor.com/media/photo-s/05/87/c7/95/wildgrass-restaurant.jpg",
+        "description": "Lush garden setting offering Indian and seafood dishes."
+      }
+    ]
+  },
+  {
+    "name": "Deoghar",
+    "description": "Known for the Baba Baidyanath temple, one of the 12 Jyotirlingas.",
+    "places_to_visit": [
+      {
+        "name": "Baba Baidyanath Dham",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Baidyanath_Dham_Temple.jpg",
+        "description": "Major Hindu pilgrimage site dedicated to Lord Shiva."
+      },
+      {
+        "name": "Naulakha Mandir",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Naulakha_Mandir_Deoghar.jpg",
+        "description": "Peaceful temple resembling Ramakrishna Mission style."
+      }
+    ],
+    "restaurants": [
+      {
+        "name": "Koyla Restaurant",
+        "image": "https://media-cdn.tripadvisor.com/media/photo-s/15/f7/84/48/koyla-restaurant.jpg",
+        "description": "Good for North Indian food near temple complex."
+      },
+      {
+        "name": "Milan Restaurant",
+        "image": "https://media-cdn.tripadvisor.com/media/photo-s/14/73/49/14/milan-restaurant.jpg",
+        "description": "Family dining spot with vegetarian and non-vegetarian options."
+      }
+    ]
+  },
+  {
+    "name": "Darjeeling",
+    "description": "Hill station in West Bengal, known for tea, toy train, and views of Kanchenjunga.",
+    "places_to_visit": [
+      {
+        "name": "Tiger Hill",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/0/01/Tiger_Hill_Darjeeling.jpg",
+        "description": "Famous for sunrise views over the Himalayas."
+      },
+      {
+        "name": "Darjeeling Himalayan Railway",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Darjeeling_Himalayan_Railway.jpg",
+        "description": "UNESCO World Heritage toy train ride."
+      }
+    ],
+    "restaurants": [
+      {
+        "name": "Kunga Restaurant",
+        "image": "https://media-cdn.tripadvisor.com/media/photo-s/13/69/66/d4/kunga-restaurant.jpg",
+        "description": "Tiny Tibetan restaurant with big flavors."
+      },
+      {
+        "name": "Glenary's",
+        "image": "https://media-cdn.tripadvisor.com/media/photo-s/05/3c/fc/f8/glenary-s.jpg",
+        "description": "Iconic bakery and cafe with views of the mountains."
+      }
+    ]
+  },
+  {
+    "name": "Dehradun",
+    "description": "Capital of Uttarakhand, nestled in the foothills of the Himalayas.",
+    "places_to_visit": [
+      {
+        "name": "Robber's Cave",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/1/18/Robbers_Cave_Dehradun.jpg",
+        "description": "River cave formation popular for picnics."
+      },
+      {
+        "name": "Forest Research Institute",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/5/58/FRI_Dehradun.JPG",
+        "description": "Colonial-style institute surrounded by lush gardens."
+      }
+    ],
+    "restaurants": [
+      {
+        "name": "Orchard",
+        "image": "https://media-cdn.tripadvisor.com/media/photo-s/07/4d/bf/fd/orchard.jpg",
+        "description": "Beautiful riverside restaurant with Tibetan, Thai, and Indian dishes."
+      },
+      {
+        "name": "Y Cafe",
+        "image": "https://media-cdn.tripadvisor.com/media/photo-s/0a/11/5d/86/y-cafe.jpg",
+        "description": "Quirky, book-themed cafe offering continental fare."
+      }
+    ]
+  },
+  {
+    "name": "Manali",
+    "description": "Mountain resort town in Himachal Pradesh, popular for honeymooners and adventurers.",
+    "places_to_visit": [
+      {
+        "name": "Hadimba Temple",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Hidimba_Temple_Manali.jpg",
+        "description": "A unique wooden temple surrounded by cedar forest."
+      },
+      {
+        "name": "Solang Valley",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Solang_Valley_Himachal_Pradesh.jpg",
+        "description": "Popular for skiing, paragliding, and snow activities."
+      }
+    ],
+    "restaurants": [
+      {
+        "name": "Johnson's Cafe",
+        "image": "https://media-cdn.tripadvisor.com/media/photo-s/09/e2/c3/3b/johnson-s-cafe.jpg",
+        "description": "Serves delicious trout and continental dishes."
+      },
+      {
+        "name": "Cafe 1947",
+        "image": "https://media-cdn.tripadvisor.com/media/photo-s/14/42/d4/f1/cafe-1947.jpg",
+        "description": "Music-themed riverside cafe with a lively vibe."
+      }
+    ]
+  },
+  {
+    "name": "Gangtok",
+    "description": "The capital of Sikkim, known for its scenic beauty and Buddhist monasteries.",
+    "places_to_visit": [
+      {
+        "name": "Rumtek Monastery",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Rumtek_Monastery.jpg",
+        "description": "One of the largest and most significant monasteries in Sikkim."
+      },
+      {
+        "name": "Tsomgo Lake",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/5/53/Tsomgo_Lake.jpg",
+        "description": "Glacial lake surrounded by mountains, frozen in winter."
+      }
+    ],
+    "restaurants": [
+      {
+        "name": "The Coffee Shop",
+        "image": "https://media-cdn.tripadvisor.com/media/photo-s/1c/92/5f/26/cafe.jpg",
+        "description": "Cozy cafe with views, serving Indian and continental food."
+      },
+      {
+        "name": "Taste of Tibet",
+        "image": "https://media-cdn.tripadvisor.com/media/photo-s/0d/3b/35/06/taste-of-tibet.jpg",
+        "description": "Budget-friendly Tibetan cuisine in MG Marg."
+      }
+    ]
+  }
+]
